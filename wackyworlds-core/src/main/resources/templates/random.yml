@@ -1,0 +1,5 @@
+# The chance for a chunk to be empty, between 0 and 1.
+# 0.1 = 10% chance to be empty.
+# 0.5 = 50% chance to be empty.
+# 1.0 or greater: 100% chance to be empty.
+empty-chance: 0.5

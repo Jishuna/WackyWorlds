@@ -1,0 +1,4 @@
+# The size of each solid stripe, must be greater than 0.
+stripe-size: 2
+# The size of the gap between each stripe.
+gap-size: 1

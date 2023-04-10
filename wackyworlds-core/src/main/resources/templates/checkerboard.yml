@@ -1,0 +1,2 @@
+# The size of each square in the checkerboard, must be greater than 0.
+square-size: 1

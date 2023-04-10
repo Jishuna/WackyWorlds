@@ -1,0 +1,16 @@
+commands:
+  reload:
+    success: '<dark_green><bold>[<green>!<dark_green>] </bold><green>Settings for all loaded worlds have been reloaded.'
+
+  player-only: '<dark_red><bold>[<red>!<dark_red>] </bold><red>Only players may use this command.'
+  no-permission: '<dark_red><bold>[<red>!<dark_red>] </bold><red>You do not have permission to use this command.'
+  usage: '<dark_red><bold>[<red>!<dark_red>] </bold><red>Invalid argument: <gray>{0}. <red>Valid arguments are: <gray>{1}.'
+  invalid-world: '<dark_red><bold>[<red>!<dark_red>] </bold><red>This world is not using a WackyWorlds generator.'
+  
+settings:
+  world-settings: '<green><u>Settings for world {0}:'
+  generator-type: '  <green>Generator: <gold>{0}'
+  square-size: '  <green>Square Size: <gold>{0}'
+  stripe-size: '  <green>Stripe Size: <gold>{0}'
+  gap-size: '  <green>Gap Size: <gold>{0}'
+  empty-chance: '  <green>Empty Chance: <gold>{0} ({1}%)'

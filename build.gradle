@@ -1,0 +1,27 @@
+plugins {
+	id 'eclipse'
+	id 'java'
+	id "com.github.johnrengelman.shadow" version "7.1.0"
+}
+
+group 'me.jishuna'
+
+// shadowJar takes care of this
+jar.enabled = false
+
+repositories {
+    maven { url = 'https://repo.epicebic.xyz/public' }
+}
+
+dependencies {
+	implementation project(":wackyworlds-core")
+}
+
+shadowJar {
+	archiveClassifier.set('')
+	archiveVersion.set('')
+}
+
+build {
+	dependsOn shadowJar
+}
