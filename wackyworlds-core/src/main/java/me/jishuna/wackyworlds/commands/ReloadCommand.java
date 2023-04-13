@@ -11,7 +11,6 @@ import org.bukkit.generator.ChunkGenerator;
 
 import me.jishuna.jishlib.Localization;
 import me.jishuna.jishlib.commands.SimpleCommandHandler;
-import me.jishuna.wackyworlds.Utils;
 import me.jishuna.wackyworlds.WackyWorlds;
 import me.jishuna.wackyworlds.generators.WackyGenerator;
 
@@ -35,7 +34,7 @@ public class ReloadCommand extends SimpleCommandHandler {
             }
 
             wackyGenerator.reloadSettings(WackyWorlds.getOrCreateConfig(plugin, world.getName(), wackyGenerator));
-            Utils.showSettings(sender, wackyGenerator, world.getName());
+            wackyGenerator.sendSettings(sender, alias);
         }
 
         sender.sendMessage(Localization.getInstance().localize("commands.reload.success"));

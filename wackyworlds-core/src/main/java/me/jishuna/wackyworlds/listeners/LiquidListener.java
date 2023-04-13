@@ -16,7 +16,7 @@ public class LiquidListener implements Listener {
         Chunk from = event.getBlock().getChunk();
         Chunk to = event.getToBlock().getChunk();
 
-        // Stop flow if the target chunk is different from the source chunk and is recently generated
+        // Stop flow if the target chunk is different from the source chunk and is recently generated.
         if (to.getInhabitedTime() > 20 || to == from) {
             return;
         }

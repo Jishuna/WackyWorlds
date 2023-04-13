@@ -12,5 +12,6 @@ settings:
   generator-type: '  <green>Generator: <gold>{0}'
   square-size: '  <green>Square Size: <gold>{0}'
   stripe-size: '  <green>Stripe Size: <gold>{0}'
+  ring-size: '  <green>Ring Size: <gold>{0}'
   gap-size: '  <green>Gap Size: <gold>{0}'
   empty-chance: '  <green>Empty Chance: <gold>{0} ({1}%)'

@@ -1,0 +1,4 @@
+# The size of each ring, must be greater than 0.
+ring-size: 1
+# The size of the gap between each ring.
+gap-size: 2

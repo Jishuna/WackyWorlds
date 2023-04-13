@@ -10,7 +10,6 @@ import org.bukkit.entity.Player;
 
 import me.jishuna.jishlib.Localization;
 import me.jishuna.jishlib.commands.SimpleCommandHandler;
-import me.jishuna.wackyworlds.Utils;
 import me.jishuna.wackyworlds.generators.WackyGenerator;
 
 public class InfoCommand extends SimpleCommandHandler {
@@ -33,7 +32,7 @@ public class InfoCommand extends SimpleCommandHandler {
         }
         
         if (world.getGenerator() instanceof WackyGenerator generator) {
-            Utils.showSettings(sender, generator, world.getName());
+            generator.sendSettings(sender, world.getName());
             return true;
         }
         sender.sendMessage(Localization.getInstance().localize("commands.invalid-world"));

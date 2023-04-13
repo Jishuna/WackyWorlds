@@ -8,13 +8,13 @@ import org.bukkit.generator.WorldInfo;
 
 import me.jishuna.jishlib.Localization;
 
-public class GridChunkGenerator extends WackyGenerator {
+public class InverseGridGenerator extends WackyGenerator {
     private int squareSize;
     private int gapSize;
     private int gridSize;
 
-    public GridChunkGenerator() {
-        super("grid");
+    public InverseGridGenerator() {
+        super("inversegrid");
     }
 
     @Override
@@ -38,7 +38,7 @@ public class GridChunkGenerator extends WackyGenerator {
         int xMod = (chunkX + gridSize) % gridSize;
         int yMod = (chunkZ + gridSize) % gridSize;
 
-        return xMod < squareSize && yMod < squareSize;
+        return !(xMod < squareSize && yMod < squareSize);
     }
 
     @Override

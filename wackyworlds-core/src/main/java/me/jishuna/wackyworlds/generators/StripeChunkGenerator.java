@@ -2,8 +2,11 @@ package me.jishuna.wackyworlds.generators;
 
 import java.util.Random;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.generator.WorldInfo;
+
+import me.jishuna.jishlib.Localization;
 
 public class StripeChunkGenerator extends WackyGenerator {
     private int stripeSize;
@@ -34,11 +37,9 @@ public class StripeChunkGenerator extends WackyGenerator {
         return xMod < stripeSize;
     }
 
-    public int getStripeSize() {
-        return stripeSize;
-    }
-
-    public int getGapSize() {
-        return gapSize;
+    @Override
+    public void sendSettings(CommandSender sender, String worldName) {
+        sender.sendMessage(Localization.getInstance().localize("settings.stripe-size", stripeSize));
+        sender.sendMessage(Localization.getInstance().localize("settings.gap-size", gapSize));
     }
 }

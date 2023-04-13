@@ -2,8 +2,11 @@ package me.jishuna.wackyworlds.generators;
 
 import java.util.Random;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.generator.WorldInfo;
+
+import me.jishuna.jishlib.Localization;
 
 public class CheckerboardChunkGenerator extends WackyGenerator {
     private int squareSize;
@@ -36,7 +39,8 @@ public class CheckerboardChunkGenerator extends WackyGenerator {
         return (row + col) % 2 == 0;
     }
 
-    public int getSquareSize() {
-        return squareSize;
+    @Override
+    public void sendSettings(CommandSender sender, String worldName) {
+        sender.sendMessage(Localization.getInstance().localize("settings.square-size", squareSize));
     }
 }

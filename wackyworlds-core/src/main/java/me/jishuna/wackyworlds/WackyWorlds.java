@@ -1,9 +1,7 @@
 package me.jishuna.wackyworlds;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -16,7 +14,9 @@ import me.jishuna.jishlib.Localization;
 import me.jishuna.wackyworlds.commands.WackyWorldCommand;
 import me.jishuna.wackyworlds.generators.CheckerboardChunkGenerator;
 import me.jishuna.wackyworlds.generators.GridChunkGenerator;
+import me.jishuna.wackyworlds.generators.InverseGridGenerator;
 import me.jishuna.wackyworlds.generators.RandomChunkGenerator;
+import me.jishuna.wackyworlds.generators.RingChunkGenerator;
 import me.jishuna.wackyworlds.generators.StripeChunkGenerator;
 import me.jishuna.wackyworlds.generators.WackyGenerator;
 import me.jishuna.wackyworlds.listeners.LiquidListener;
@@ -43,10 +43,14 @@ public class WackyWorlds extends JavaPlugin {
             return setupGenerator(worldName, new CheckerboardChunkGenerator());
         case "GRID":
             return setupGenerator(worldName, new GridChunkGenerator());
+        case "INVERSEGRID":
+            return setupGenerator(worldName, new InverseGridGenerator());
         case "RANDOM":
             return setupGenerator(worldName, new RandomChunkGenerator());
         case "STRIPE":
             return setupGenerator(worldName, new StripeChunkGenerator());
+        case "RING":
+            return setupGenerator(worldName, new RingChunkGenerator());
         default:
             return null;
         }
@@ -73,34 +77,12 @@ public class WackyWorlds extends JavaPlugin {
         if (!target.exists()) {
             try {
                 target.createNewFile();
-                copyFile(plugin.getResource("templates/" + generator.getName() + ".yml"), target);
+                Utils.copyFile(plugin.getResource("templates/" + generator.getName() + ".yml"), target);
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
         }
 
         return YamlConfiguration.loadConfiguration(target);
-    }
-
-    public static boolean copyFile(InputStream input, File outputFile) {
-        FileOutputStream output = null;
-        try {
-            output = new FileOutputStream(outputFile);
-            input.transferTo(output);
-        } catch (IOException ioe) {
-            return false;
-        } finally {
-            try {
-                if (input != null) {
-                    input.close();
-                }
-                if (output != null) {
-                    output.close();
-                }
-            } catch (IOException ioe) {
-                return false;
-            }
-        }
-        return true;
     }
 }

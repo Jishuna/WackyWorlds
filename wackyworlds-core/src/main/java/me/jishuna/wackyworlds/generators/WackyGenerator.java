@@ -2,12 +2,12 @@ package me.jishuna.wackyworlds.generators;
 
 import java.util.Random;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.generator.WorldInfo;
 
 public abstract class WackyGenerator extends ChunkGenerator {
-
     private final String name;
 
     protected WackyGenerator(String name) {
@@ -18,6 +18,7 @@ public abstract class WackyGenerator extends ChunkGenerator {
 
     public abstract boolean shouldGenerateTerrain(WorldInfo worldInfo, Random random, int chunkX, int chunkZ);
 
+    public abstract void sendSettings(CommandSender sender, String worldName);
     public String getName() {
         return name;
     }

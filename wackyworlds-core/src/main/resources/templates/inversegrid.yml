@@ -1,0 +1,4 @@
+# The size of each empty square in the grid, must be greater than 0.
+square-size: 2
+# The size of the gap between each square in the grid.
+gap-size: 1

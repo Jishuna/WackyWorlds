@@ -2,8 +2,11 @@ package me.jishuna.wackyworlds.generators;
 
 import java.util.Random;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.generator.WorldInfo;
+
+import me.jishuna.jishlib.Localization;
 
 public class RandomChunkGenerator extends WackyGenerator {
     private double emptyChance;
@@ -23,7 +26,9 @@ public class RandomChunkGenerator extends WackyGenerator {
         return random.nextDouble() < (1 - emptyChance);
     }
 
-    public double getEmptyChance() {
-        return emptyChance;
+    @Override
+    public void sendSettings(CommandSender sender, String worldName) {
+        sender.sendMessage(
+                Localization.getInstance().localize("settings.empty-chance", emptyChance, (emptyChance * 100d)));
     }
 }
