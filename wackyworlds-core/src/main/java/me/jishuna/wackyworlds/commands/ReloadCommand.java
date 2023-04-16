@@ -25,7 +25,7 @@ public class ReloadCommand extends SimpleCommandHandler {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String alias, String[] args) {
         plugin.reload();
-        
+
         for (World world : Bukkit.getWorlds()) {
             ChunkGenerator generator = world.getGenerator();
 
@@ -33,7 +33,8 @@ public class ReloadCommand extends SimpleCommandHandler {
                 continue;
             }
 
-            wackyGenerator.reloadSettings(WackyWorlds.getOrCreateConfig(plugin, world.getName(), wackyGenerator));
+            wackyGenerator.reloadSettings(plugin.getDataFolder(),
+                    WackyWorlds.getOrCreateConfig(plugin, world.getName(), wackyGenerator));
             wackyGenerator.sendSettings(sender, alias);
         }
 

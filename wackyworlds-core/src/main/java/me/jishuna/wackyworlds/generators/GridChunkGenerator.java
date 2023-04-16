@@ -1,5 +1,6 @@
 package me.jishuna.wackyworlds.generators;
 
+import java.io.File;
 import java.util.Random;
 
 import org.bukkit.command.CommandSender;
@@ -18,7 +19,7 @@ public class GridChunkGenerator extends WackyGenerator {
     }
 
     @Override
-    public void reloadSettings(YamlConfiguration config) {
+    public void reloadSettings(File pluginFolder, YamlConfiguration config) {
         int squareSize = config.getInt("square-size");
         this.squareSize = Math.max(squareSize, 1);
 

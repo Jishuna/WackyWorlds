@@ -1,5 +1,6 @@
 package me.jishuna.wackyworlds.generators;
 
+import java.io.File;
 import java.util.Random;
 
 import org.bukkit.command.CommandSender;
@@ -19,7 +20,7 @@ public class RingChunkGenerator extends WackyGenerator {
     }
 
     @Override
-    public void reloadSettings(YamlConfiguration config) {
+    public void reloadSettings(File pluginFolder, YamlConfiguration config) {
         int filledSize = config.getInt("ring-size");
         this.filledSize = Math.max(filledSize, 1);
 

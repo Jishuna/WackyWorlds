@@ -1,5 +1,6 @@
 package me.jishuna.wackyworlds.generators;
 
+import java.io.File;
 import java.util.Random;
 
 import org.bukkit.command.CommandSender;
@@ -17,7 +18,7 @@ public class CheckerboardChunkGenerator extends WackyGenerator {
     }
 
     @Override
-    public void reloadSettings(YamlConfiguration config) {
+    public void reloadSettings(File pluginFolder, YamlConfiguration config) {
         int size = config.getInt("square-size");
         this.squareSize = Math.max(size, 1);
 

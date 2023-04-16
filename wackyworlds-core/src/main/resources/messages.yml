@@ -15,3 +15,6 @@ settings:
   ring-size: '  <green>Ring Size: <gold>{0}'
   gap-size: '  <green>Gap Size: <gold>{0}'
   empty-chance: '  <green>Empty Chance: <gold>{0} ({1}%)'
+  width: '  <green>Pattern Width: <gold>{0}'
+  height: '  <green>Pattern Height: <gold>{0}'
+  file-name: '  <green>Image: <gold>{0}'

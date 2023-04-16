@@ -1,5 +1,6 @@
 package me.jishuna.wackyworlds.generators;
 
+import java.io.File;
 import java.util.Random;
 
 import org.bukkit.command.CommandSender;
@@ -18,7 +19,7 @@ public class StripeChunkGenerator extends WackyGenerator {
     }
 
     @Override
-    public void reloadSettings(YamlConfiguration config) {
+    public void reloadSettings(File pluginFolder, YamlConfiguration config) {
         int stripeSize = config.getInt("stripe-size");
         this.stripeSize = Math.max(stripeSize, 1);
 

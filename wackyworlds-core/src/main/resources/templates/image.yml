@@ -1,0 +1,4 @@
+# The image to use as a pattern for world generation.
+# Any fully opaque pixels will be treated as land.
+# Any transparent or partially transparent pixels will be treated as empty.
+image: images/triangles.png

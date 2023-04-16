@@ -1,5 +1,6 @@
 package me.jishuna.wackyworlds.generators;
 
+import java.io.File;
 import java.util.Random;
 
 import org.bukkit.command.CommandSender;
@@ -16,7 +17,7 @@ public class RandomChunkGenerator extends WackyGenerator {
     }
 
     @Override
-    public void reloadSettings(YamlConfiguration config) {
+    public void reloadSettings(File pluginFolder, YamlConfiguration config) {
         double chance = config.getDouble("empty-chance");
         this.emptyChance = Math.max(chance, 0d);
     }

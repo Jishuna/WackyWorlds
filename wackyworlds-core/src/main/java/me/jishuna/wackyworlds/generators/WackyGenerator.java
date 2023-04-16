@@ -1,5 +1,6 @@
 package me.jishuna.wackyworlds.generators;
 
+import java.io.File;
 import java.util.Random;
 
 import org.bukkit.command.CommandSender;
@@ -14,7 +15,7 @@ public abstract class WackyGenerator extends ChunkGenerator {
         this.name = name;
     }
 
-    public abstract void reloadSettings(YamlConfiguration config);
+    public abstract void reloadSettings(File pluginFolder, YamlConfiguration config);
 
     public abstract boolean shouldGenerateTerrain(WorldInfo worldInfo, Random random, int chunkX, int chunkZ);
 
